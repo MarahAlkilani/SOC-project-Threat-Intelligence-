@@ -545,13 +545,3 @@ https://github.com/MarahAlkilani/SOC-project-Threat-Intelligence-
 # 📜 License
 
 This project is for educational and academic purposes only.
-
----
-
-# ⭐ Acknowledgments
-
-Special thanks to:
-- Splunk Enterprise
-- Open-source Threat Intelligence feeds
-- SOC and Cybersecurity research communities
-- University instructors and project supervisors
