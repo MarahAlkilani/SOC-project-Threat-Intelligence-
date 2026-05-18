@@ -56,11 +56,6 @@ SOC-project-Threat-Intelligence/
 │   ├── threat_intel_urls.csv
 │   ├── threat_intel_useragents.csv
 │
-├── screenshots/
-│   ├── dashboards/
-│   ├── alerts/
-│   ├── models/
-│
 ├── spl_queries/
 │   ├── rule_1.spl
 │   ├── rule_2.spl
