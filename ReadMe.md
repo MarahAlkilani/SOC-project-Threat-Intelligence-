@@ -119,16 +119,28 @@ Several threat intelligence lookup tables were created and integrated into Splun
 | `threat_intel_useragents.csv` | Suspicious User-Agents |
 
 ---
-
 # 🔍 Detection Rules
 
-The SOC platform contains multiple correlation and behavioral detection rules.
+The SOC Threat Intelligence platform contains 9 advanced detection and correlation rules designed to identify malicious activity, enrich indicators of compromise (IOCs), detect behavioral anomalies, and prioritize threats based on risk severity.
+
+These rules combine:
+- Threat Intelligence enrichment
+- Behavioral analytics
+- Correlation searches
+- Risk scoring
+- AI-inspired anomaly detection
 
 ---
 
 # Rule 1 — Malicious IP in Authentication Logs
 
-Detects malicious source IPs attempting authentication.
+Detects malicious source IP addresses attempting authentication against Linux systems by correlating authentication logs with external threat intelligence feeds.
+
+### Features
+- Threat intelligence enrichment
+- Login activity monitoring
+- Severity classification
+- User targeting visibility
 
 ```spl
 index=soc_project source="linux_auth_logs_full(balanced).csv"
@@ -146,7 +158,13 @@ by source_ip, severity, description
 
 # Rule 2 — Malicious IP in Network Traffic
 
-Detects malicious IP communication within network traffic.
+Detects malicious source or destination IP addresses inside network traffic logs using threat intelligence lookups.
+
+### Features
+- Source and destination IP inspection
+- IOC correlation
+- Attack type visibility
+- Threat severity identification
 
 ```spl
 index=soc_project source="train_test_network.csv"
@@ -166,7 +184,13 @@ by check_ip, severity, description
 
 # Rule 3 — Malicious Domain Detection
 
-Detects malicious DNS queries.
+Detects suspicious and malicious domains queried through DNS traffic.
+
+### Features
+- DNS query inspection
+- Domain IOC enrichment
+- Threat severity mapping
+- Host visibility
 
 ```spl
 index=soc_project source="train_test_network.csv"
@@ -185,7 +209,13 @@ by dns_query, severity, description
 
 # Rule 4 — Malicious URL Detection
 
-Detects malicious URLs visited in traffic logs.
+Detects malicious URLs accessed within network communications.
+
+### Features
+- URL inspection
+- IOC enrichment
+- Source and destination tracking
+- Threat classification
 
 ```spl
 index=soc_project source="train_test_network.csv"
@@ -205,7 +235,13 @@ by http_uri, severity, description
 
 # Rule 5 — Suspicious User-Agent Detection
 
-Detects suspicious or malicious HTTP User-Agents.
+Detects suspicious or malicious HTTP User-Agent strings frequently associated with malware, scanners, bots, or automated attack tools.
+
+### Features
+- User-Agent inspection
+- Behavioral detection
+- Threat intelligence correlation
+- Target URL visibility
 
 ```spl
 index=soc_project source="train_test_network.csv"
@@ -225,7 +261,13 @@ by http_user_agent, severity, description
 
 # Rule 6 — Brute Force Detection
 
-Detects repeated failed login attempts.
+Detects brute-force login attempts by identifying excessive failed authentication attempts from the same source IP address.
+
+### Features
+- Failed login monitoring
+- User targeting analysis
+- Risk classification
+- Authentication anomaly detection
 
 ```spl
 index=soc_project source="linux_auth_logs_full(balanced).csv"
@@ -248,7 +290,13 @@ failed_attempts>20, "Medium",
 
 # Rule 7 — Port Scan Detection
 
-Detects port scanning behavior.
+Detects port scanning activity by analyzing anomalous connection behavior across multiple ports and servers.
+
+### Features
+- Port scanning detection
+- Multi-server targeting analysis
+- Scan intensity monitoring
+- Behavioral threat analysis
 
 ```spl
 index=soc_project source="linux_auth_logs_full(balanced).csv"
@@ -269,17 +317,70 @@ scan_events>50, "High",
 
 # Rule 8 — Multi-IOC Risk Scoring
 
-Combines multiple indicators of compromise (IOCs) into a single threat score.
+Combines multiple indicators of compromise into a unified risk score to improve threat prioritization and incident response.
 
-Features:
+### Features
+- Multi-source IOC enrichment
 - IP severity scoring
 - Domain severity scoring
 - URL severity scoring
 - User-Agent severity scoring
-- Total threat score calculation
 - Risk tier classification
 
+```spl
+index=soc_project source="train_test_network.csv"
+| lookup threat_intel_ips ioc_value AS src_ip OUTPUT severity AS ip_severity
+| lookup threat_intel_ips ioc_value AS dst_ip OUTPUT severity AS dst_ip_severity
+| lookup threat_intel_domains ioc_value AS dns_query OUTPUT severity AS domain_severity
+| lookup threat_intel_urls ioc_value AS http_uri OUTPUT severity AS url_severity
+| lookup threat_intel_useragents ioc_value AS http_user_agent OUTPUT severity AS ua_severity
+| eval ip_score=case(ip_severity=="critical",5, ip_severity=="high",3, ip_severity=="medium",1, isnotnull(dst_ip_severity),2, 1==1,0)
+| eval domain_score=case(domain_severity=="critical",5, domain_severity=="high",3, domain_severity=="medium",1, 1==1,0)
+| eval url_score=case(url_severity=="critical",5, url_severity=="high",3, url_severity=="medium",1, 1==1,0)
+| eval ua_score=case(ua_severity=="critical",5, ua_severity=="high",3, ua_severity=="medium",1, 1==1,0)
+| eval total_threat_score=ip_score+domain_score+url_score+ua_score
+| where total_threat_score > 0
+```
+
 ---
+
+# Rule 9 — AI-Based Threat Prioritization
+
+Uses weighted attack scoring and threat intelligence enrichment to prioritize high-risk malicious activity automatically.
+
+### Features
+- Weighted attack scoring
+- Threat intelligence enrichment
+- Automated prioritization
+- Risk-based classification
+- AI-inspired analytics
+
+```spl
+index=soc_project source="train_test_network.csv" label=1
+| eval attack_risk=case(
+type=="backdoor",10,
+type=="ransomware",10,
+type=="mitm",9,
+type=="injection",8,
+type=="xss",7,
+type=="password",7,
+type=="ddos",6,
+type=="dos",5,
+type=="scanning",4,
+1==1,1)
+| lookup threat_intel_ips ioc_value AS src_ip OUTPUT severity AS ti_severity
+| eval ti_bonus=case(
+ti_severity=="critical",5,
+ti_severity=="high",3,
+ti_severity=="medium",1,
+1==1,0)
+| eval final_risk=attack_risk + ti_bonus
+| stats avg(final_risk) AS avg_risk,
+max(final_risk) AS max_risk,
+count AS events
+by src_ip, type
+| sort -max_risk
+```
 
 # 🤖 AI Detection Models
 
