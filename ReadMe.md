@@ -535,7 +535,7 @@ Potential future enhancements:
 - Tasnim Abuayyash https://github.com/ta099l
 - Marah Alkilani https://github.com/MarahAlkilani
 - Rana Alshalout https://github.com/r05m
-- Dana Alsaket
+- Dana Alsaket https://github.com/saket5d
 
 GitHub Repository:
 https://github.com/MarahAlkilani/SOC-project-Threat-Intelligence-
