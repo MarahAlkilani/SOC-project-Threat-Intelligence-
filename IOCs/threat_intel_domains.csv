@@ -1,0 +1,21 @@
+ioc_value,ioc_type,source,severity,description
+testphp.vulnweb.com,domain,MISP,critical,Known vulnerable web application test target - Acunetix
+testphp.vulnweb.com/listproducts.php,domain,MISP,critical,SQL injection testing endpoint
+testphp.vulnweb.com/listproducts.php.hub,domain,MISP,high,SQL injection testing endpoint variant
+elasticsearch.mydns.com,domain,AlienVault,high,Suspicious dynamic DNS - possible C2 channel
+broker.hivemq.com,domain,MISP,medium,Public MQTT broker - potential IoT C2 communication
+a2z3kk2ebqzso7.iot.ap-southeast-2.amazonaws.com,domain,AlienVault,medium,Suspicious IoT endpoint - possible botnet C2
+wpad,domain,MISP,high,WPAD poisoning - man-in-the-middle attack vector
+wpad.hub,domain,MISP,high,WPAD poisoning attempt via hub resolution
+evil-domain.com,domain,MISP,critical,Known C2 server infrastructure
+malware-distribution.net,domain,AlienVault,critical,Active malware distribution server
+darkweb-market.onion.to,domain,MISP,critical,Dark web proxy gateway
+command-control.xyz,domain,AlienVault,critical,Command and control domain
+phishing-login.com,domain,PhishTank,critical,Active phishing campaign domain
+fake-update-center.com,domain,MISP,critical,Fake software update malware delivery
+cryptominer-pool.net,domain,AlienVault,high,Cryptocurrency mining pool - cryptojacking
+ransomware-payment.org,domain,MISP,critical,Ransomware payment portal
+stealer-c2.info,domain,VirusTotal,critical,Info stealer command and control
+botnet-controller.biz,domain,AlienVault,critical,Known botnet controller domain
+exploit-kit-landing.com,domain,MISP,critical,Exploit kit landing page
+apt-staging.net,domain,VirusTotal,critical,APT group staging server

@@ -1,0 +1,16 @@
+ioc_value,ioc_type,source,severity,description
+attacker@phishing-domain.com,email,OpenPhish,critical,Known phishing campaign sender
+support@fake-bank-alert.com,email,PhishTank,critical,Bank credential phishing campaign
+admin@malware-download.net,email,MISP,critical,Malware distribution email sender
+invoice@scam-company.biz,email,OpenPhish,high,Invoice scam phishing campaign
+hr-notification@spoofed-corp.com,email,MISP,high,Spear phishing - HR impersonation
+security-alert@fake-microsoft.com,email,PhishTank,critical,Microsoft impersonation phishing
+update@fake-adobe-update.com,email,OpenPhish,high,Fake software update malware delivery
+billing@fraudulent-service.net,email,PhishTank,high,Billing fraud phishing campaign
+verify@account-secure-login.com,email,MISP,critical,Account verification phishing
+support@crypto-wallet-recovery.com,email,OpenPhish,critical,Cryptocurrency theft phishing
+noreply@fake-paypal-notice.com,email,PhishTank,critical,PayPal impersonation phishing
+admin@ransomware-payment.org,email,MISP,critical,Ransomware payment instruction sender
+helpdesk@it-support-scam.com,email,OpenPhish,high,IT support impersonation phishing
+delivery@fake-shipping-notice.com,email,PhishTank,high,Shipping notification phishing
+ceo@spoofed-executive.com,email,MISP,critical,CEO fraud - business email compromise

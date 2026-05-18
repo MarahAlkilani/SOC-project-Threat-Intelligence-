@@ -1,0 +1,51 @@
+ioc_value,ioc_type,source,severity,description
+197.173.77.159,ipv4,AlienVault,critical,Brute force attacker - high volume failed logins
+28.27.165.42,ipv4,AlienVault,high,Brute force attacker - credential stuffing
+16.58.34.220,ipv4,VirusTotal,high,Suspicious login activity - multiple failed attempts
+197.91.117.146,ipv4,AlienVault,critical,Brute force attacker - distributed campaign
+29.65.156.176,ipv4,MISP,high,Brute force attacker - password spraying
+79.97.209.64,ipv4,AlienVault,high,Suspicious authentication activity
+109.187.169.146,ipv4,VirusTotal,critical,Known scanning and brute force source
+148.151.102.252,ipv4,AlienVault,high,Credential stuffing campaign source
+174.250.81.252,ipv4,MISP,medium,Suspicious repeated login failures
+191.102.82.81,ipv4,AlienVault,high,Brute force attacker - Latin America botnet
+192.220.120.223,ipv4,VirusTotal,high,Automated attack tool detected
+216.230.255.9,ipv4,AlienVault,critical,Command and control infrastructure
+42.225.15.24,ipv4,MISP,high,Known scanning source - Asia Pacific
+48.151.2.8,ipv4,AlienVault,medium,Suspicious authentication patterns
+72.7.26.129,ipv4,VirusTotal,high,Brute force campaign participant
+15.126.122.139,ipv4,AlienVault,medium,Cloud-based attack infrastructure
+218.69.132.167,ipv4,MISP,high,Known brute force source - East Asia
+72.205.188.228,ipv4,AlienVault,high,Distributed brute force campaign
+105.15.222.163,ipv4,VirusTotal,critical,African botnet node
+107.109.179.35,ipv4,AlienVault,high,Automated credential testing
+132.129.80.133,ipv4,MISP,medium,Suspicious scanning activity
+170.58.46.1,ipv4,AlienVault,high,Latin America brute force source
+175.14.199.20,ipv4,VirusTotal,high,Known attack infrastructure
+88.168.168.45,ipv4,AlienVault,critical,European botnet command node
+96.77.151.72,ipv4,MISP,high,Credential harvesting source
+110.122.43.19,ipv4,AlienVault,high,Asia Pacific scanning source
+110.62.39.146,ipv4,VirusTotal,medium,Suspicious login source
+117.112.224.3,ipv4,MISP,high,Brute force campaign node
+130.194.4.195,ipv4,AlienVault,medium,Academic network abuse
+185.220.101.1,ipv4,AlienVault,critical,Known Tor exit node - malicious traffic
+185.220.101.35,ipv4,AlienVault,critical,Known Tor exit node - attack relay
+185.56.83.83,ipv4,MISP,critical,APT28 associated infrastructure
+45.155.205.233,ipv4,AlienVault,critical,Emotet botnet C2 server
+5.188.86.172,ipv4,VirusTotal,critical,Known brute force attacker
+193.42.33.45,ipv4,AlienVault,high,Cobalt Strike beacon server
+91.219.236.222,ipv4,MISP,high,Malware distribution server
+23.129.64.130,ipv4,AlienVault,high,Tor exit relay - abuse reported
+185.100.87.202,ipv4,VirusTotal,critical,Known ransomware C2
+194.147.142.1,ipv4,MISP,high,DDoS botnet controller
+45.33.32.156,ipv4,AlienVault,medium,Nmap scanme - reconnaissance
+162.247.74.27,ipv4,AlienVault,high,Tor exit node - attack source
+171.25.193.77,ipv4,MISP,high,Tor exit relay - brute force source
+199.195.250.77,ipv4,VirusTotal,critical,Phishing infrastructure
+104.244.76.13,ipv4,AlienVault,high,Tor exit node
+209.141.33.121,ipv4,MISP,critical,Bulletproof hosting - malware
+185.129.62.62,ipv4,AlienVault,critical,Known APT infrastructure
+77.247.181.163,ipv4,VirusTotal,high,Tor exit relay - scanning
+198.98.56.69,ipv4,MISP,high,VPN abuse - attack source
+46.166.139.111,ipv4,AlienVault,critical,Ransomware delivery server
+91.121.87.18,ipv4,VirusTotal,high,Scanning and exploitation source

@@ -1,0 +1,21 @@
+ioc_value,ioc_type,source,severity,description
+/dvwa/login.php-r,url,Internal,critical,DVWA exploitation - brute force login attempt
+/no_nonce_string/,url,Internal,high,UPnP exploitation - no authentication nonce
+/no_nonce_string/ContentDirectory/scpd.xml,url,Internal,high,UPnP service discovery exploitation
+/shell.php,url,MISP,critical,Web shell access attempt
+/cmd.exe,url,MISP,critical,Remote command execution attempt
+/c99.php,url,MISP,critical,C99 web shell access
+/wp-login.php,url,PhishTank,medium,WordPress login brute force target
+/phpmyadmin/,url,Internal,high,Database admin panel access attempt
+/admin/login.php,url,Internal,medium,Admin panel brute force target
+/wp-admin/,url,Internal,medium,WordPress admin access attempt
+/.env,url,MISP,high,Environment file exposure - credential theft
+/config.php,url,Internal,high,Configuration file access attempt
+/etc/passwd,url,MISP,critical,Local file inclusion - password file access
+/wp-content/uploads/,url,Internal,medium,WordPress upload directory enumeration
+/cgi-bin/,url,Internal,medium,CGI directory scanning
+/xmlrpc.php,url,Internal,high,WordPress XML-RPC brute force endpoint
+/.git/config,url,MISP,high,Git repository exposure - source code theft
+/administrator/,url,Internal,medium,Joomla admin panel access attempt
+/api/v1/,url,Internal,low,API endpoint enumeration
+/backup.sql,url,MISP,critical,Database backup file exposure

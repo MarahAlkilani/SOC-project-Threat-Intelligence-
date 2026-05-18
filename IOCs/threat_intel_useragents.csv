@@ -1,0 +1,21 @@
+ioc_value,ioc_type,source,severity,description
+sqlmap/1.2#stable (http://sqlmap.org),useragent,GitHub,critical,SQLMap SQL injection tool - active exploitation
+hacking,useragent,Internal,critical,Explicitly malicious user-agent string
+Ruby,useragent,GitHub,high,Ruby scripting agent - commonly used by Metasploit framework
+DataCha0s/2.0,useragent,GitHub,critical,DataCha0s scanner - known vulnerability scanner
+DonutP; Windows98SE,useragent,Internal,high,Spoofed user-agent - suspicious legacy OS claim
+Comos/0.9_(robot@xyleme.com),useragent,GitHub,medium,Aggressive web crawler bot
+Nikto,useragent,GitHub,critical,Nikto web vulnerability scanner
+DirBuster,useragent,GitHub,high,Directory brute-force discovery tool
+Hydra,useragent,GitHub,critical,Hydra password brute-force tool
+Havij,useragent,GitHub,critical,Havij SQL injection tool
+Acunetix,useragent,GitHub,high,Acunetix web vulnerability scanner
+w3af,useragent,GitHub,high,Web Application Attack and Audit Framework
+Metasploit,useragent,GitHub,critical,Metasploit exploitation framework
+masscan,useragent,GitHub,high,Masscan mass port scanner
+gobuster,useragent,GitHub,high,Gobuster directory and DNS brute-forcer
+ZmEu,useragent,GitHub,critical,ZmEu phpMyAdmin exploit scanner
+Nmap,useragent,GitHub,critical,Nmap network scanner
+WPScan,useragent,GitHub,high,WordPress security scanner
+Arachni,useragent,GitHub,high,Arachni web application security scanner
+OpenVAS,useragent,GitHub,high,OpenVAS vulnerability scanner
