@@ -516,19 +516,6 @@ Configured saved alerts include:
 
 ---
 
-# 📷 Screenshots
-
-The repository includes screenshots demonstrating:
-- Loaded datasets
-- Lookup tables
-- Detection rule execution
-- Threat intelligence enrichment
-- AI model results
-- Triggered alerts
-- SOC dashboards
-
----
-
 # 🚀 Future Improvements
 
 Potential future enhancements:
@@ -545,8 +532,10 @@ Potential future enhancements:
 
 # 👩‍💻 Authors
 
-- Farah Alzoubi
-- Marah Alkilani
+- Tasnim Abuayyash https://github.com/ta099l
+- Marah Alkilani https://github.com/MarahAlkilani
+- Rana Alshalout https://github.com/r05m
+- Dana Alsaket
 
 GitHub Repository:
 https://github.com/MarahAlkilani/SOC-project-Threat-Intelligence-
